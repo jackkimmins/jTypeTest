@@ -60,7 +60,7 @@ $.ajax({
     type: 'GET',
     success: function (response) {
         // console.log(response);
-        let words = ArrayShuffle(response.split("\r\n"));
+        let words = ArrayShuffle(response.split("\n"));
 
         //Add words to .words
         words.forEach(word => {
