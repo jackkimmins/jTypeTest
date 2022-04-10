@@ -136,6 +136,7 @@ main #inputs #reset {
   border: 1px solid lightblue;
   font-family: 'Montserrat', sans-serif;
   cursor: pointer;
+  font-size: 1vw;
 }
 
 #stats {
@@ -154,7 +155,7 @@ main #inputs #reset {
 #stats .child {
   background-color: white;
   padding: 0.8vw;
-  border-top: 8px solid blue;
+  border-top: 0.4vw solid blue;
   -webkit-box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.2);
           box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.2);
 }
@@ -196,6 +197,14 @@ main #inputs #reset {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+#stats #siteStats select {
+  border: 1px solid lightblue;
+  padding: 0.6vw;
+  font-size: 1vw;
+  width: 100%;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .lds-spinner {

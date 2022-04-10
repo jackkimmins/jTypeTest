@@ -24,16 +24,26 @@ function CountDown(seconds, callback) {
             $("#textInput").val("");
             $("#textInput").prop("disabled", true);
 
-            const WPM = correct + incorrect + " WPM";
-            const Accuracy = Math.floor((correct / (correct + incorrect)) * 100) + "%";
+            const Accuracy = incorrect / (correct + incorrect) * 100;
+            const AccuracyString = Accuracy.toFixed(2) + "%";
 
-            //Set stats
-            $('#wpm').text(WPM);
-            $('#accuracy').text(Accuracy);
+            if (incorrect >= 20)
+            {
+                $('#wpm').text('Invalid WPM');
+                $('#accuracy').text(AccuracyString);
+            }
+            else
+            {
+                const WPM = correct + incorrect + " WPM";
 
-            //Save the stats in the local storage
-            localStorage.setItem("wpm", WPM);
-            localStorage.setItem("accuracy", Accuracy);
+                //Set stats
+                $('#wpm').text(WPM);
+                $('#accuracy').text(AccuracyString);
+
+                //Save the stats in the local storage
+                localStorage.setItem("wpm", WPM);
+                localStorage.setItem("accuracy", AccuracyString);
+            }
 
             //Fade out and remove all .word
             $(".word").fadeOut(1000, function () {
@@ -113,7 +123,7 @@ $('#wordList').change(function() {
 $("#textInput").keyup(function(event) {
     if (!isCountingDown)
     {
-        CountDown(60);
+        CountDown(12);
         isCountingDown = true;
         $("#textInput").prop("disabled", false);
         return;
