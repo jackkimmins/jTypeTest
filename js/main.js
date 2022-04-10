@@ -24,7 +24,7 @@ function CountDown(seconds, callback) {
             $("#textInput").val("");
             $("#textInput").prop("disabled", true);
 
-            const Accuracy = incorrect / (correct + incorrect) * 100;
+            const Accuracy = correct / (correct + incorrect) * 100;
             const AccuracyString = Accuracy.toFixed(2) + "%";
 
             if (incorrect >= 20)
