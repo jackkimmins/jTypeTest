@@ -179,14 +179,6 @@ main #inputs #reset {
   text-align: center;
 }
 
-#stats #userStats #wpm {
-  font-size: 1.8vw;
-}
-
-#stats #userStats #accuracy {
-  font-size: 1.2vw;
-}
-
 #stats #siteStats {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -205,6 +197,14 @@ main #inputs #reset {
   font-size: 1vw;
   width: 100%;
   font-family: 'Montserrat', sans-serif;
+}
+
+#stats #wpm, #stats #bestWPM {
+  font-size: 1.8vw;
+}
+
+#stats #accuracy, #stats #bestAccuracy {
+  font-size: 1.2vw;
 }
 
 .lds-spinner {

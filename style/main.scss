@@ -157,14 +157,6 @@ main {
             font-weight: bold;
             text-align: center;
         }
-
-        #wpm {
-            font-size: 1.8vw;
-        }
-
-        #accuracy {
-            font-size: 1.2vw;
-        }
     }
 
     #siteStats {
@@ -179,6 +171,14 @@ main {
             width: 100%;
             font-family: 'Montserrat', sans-serif;
         }
+    }
+
+    #wpm, #bestWPM {
+        font-size: 1.8vw;
+    }
+
+    #accuracy, #bestAccuracy {
+        font-size: 1.2vw;
     }
 }
 
