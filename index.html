@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jTestType</title>
+    <link rel="stylesheet" href="./style/main.min.css">
+</head>
+
+<body>
+    <div id="contain">
+        <header class="container">
+            <h1>jTypeTest</h1>
+        </header>
+    
+        <main class="container">
+            <section id="text">
+                <div class="words">
+                    <!-- <span class="word active">hello</span> -->
+                </div>
+            </section>
+    
+            <section id="inputs">
+                <input id="textInput" type="text">
+                <div id="timer">1:00</div>
+                <button id="reset">Reset</button>
+            </section>
+        </main>
+    
+        <section id="stats" class="container">
+            <div id="userStats" class="child">
+                <h1 id="wpm">0 WPM</h1>
+                <h2 id="accuracy">100%</h2>
+            </div>
+    
+            <div id="siteStats" class="child">
+                <select id="wordList">
+                    <option value="standard">Standard</option>
+                    <option value="advanced">Advanced</option>
+                    <option value="computing">Computing</option>
+                </select>
+            </div>
+        </section>
+    </div>
+
+    <section id="loader">
+        <div class="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+    </section>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <script src="./js/main.js"></script>
+</body>
+
+</html>
