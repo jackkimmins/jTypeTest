@@ -123,7 +123,7 @@ $('#wordList').change(function() {
 $("#textInput").keyup(function(event) {
     if (!isCountingDown)
     {
-        CountDown(12);
+        CountDown(60);
         isCountingDown = true;
         $("#textInput").prop("disabled", false);
         return;
