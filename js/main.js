@@ -144,6 +144,12 @@ $("#textInput").keyup(function(event) {
     //Check if the key is space
     if (event.keyCode == 32)
     {
+        //If value is empty
+        if (value == "")
+        {
+            return;
+        }
+
         if (value == currentWord.text())
         {
             currentWord.addClass('correct');
