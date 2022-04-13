@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Raleway:wght@200;400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Raleway:wght@200;400&family=Roboto:wght@300;400&display=swap");
 body {
   margin: 0;
   width: 100%;
@@ -27,7 +27,7 @@ body {
 }
 
 .container {
-  width: 50vw;
+  width: 45vw;
   padding: 0.8vw;
   background-color: white;
   background-image: url("../img/debut-light.png");
@@ -52,7 +52,8 @@ main {
 }
 
 main #text {
-  height: 5.4vw;
+  position: relative;
+  height: 6.3vw;
   overflow: hidden;
   margin-bottom: 1vh;
   border: 1px solid lightblue;
@@ -60,6 +61,23 @@ main #text {
           box-shadow: inset 2px 2px 5px 0px rgba(0, 0, 0, 0.2);
   background-color: white;
   border-radius: 0.2vw;
+}
+
+main #text #caret {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 1.5vw;
+  border-left: 0.1vw solid blue;
+  -webkit-transition: all 0.2s ease 0s, -webkit-transform 0.05s ease 0s;
+  transition: all 0.2s ease 0s, -webkit-transform 0.05s ease 0s;
+  transition: all 0.2s ease 0s, transform 0.05s ease 0s;
+  transition: all 0.2s ease 0s, transform 0.05s ease 0s, -webkit-transform 0.05s ease 0s;
+}
+
+main #text .blink {
+  -webkit-animation: blink normal 2s infinite ease-in-out;
+          animation: blink normal 2s infinite ease-in-out;
 }
 
 main #text > .words {
@@ -73,25 +91,37 @@ main #text > .words {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  padding-inline: 1vw;
+  padding-inline: 0.6vw;
   padding-top: 0.4vw;
 }
 
 main #text > .words > .word {
   position: relative;
-  margin-right: 2vw;
+  margin-right: 0.45vw;
   padding-inline: 0.2vw;
-  font-size: 1.9vw;
+  font-size: 1.4vw;
+  font-family: 'Roboto', sans-serif;
   margin-bottom: 0.3vw;
+  color: gray;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+main #text > .words > .word > .correct {
+  color: black;
+}
+
+main #text > .words > .word > .incorrect {
+  color: red;
+  text-decoration: underline;
 }
 
 main #text > .words > .active {
-  background-color: rgba(0, 0, 0, 0.15);
   border-radius: 0.2vw;
 }
 
 main #text > .words > .correct {
-  color: green;
+  color: black;
 }
 
 main #text > .words > .incorrect {
@@ -199,11 +229,13 @@ main #inputs #reset {
   font-family: 'Montserrat', sans-serif;
 }
 
-#stats #wpm, #stats #bestWPM {
+#stats #wpm,
+#stats #bestWPM {
   font-size: 1.8vw;
 }
 
-#stats #accuracy, #stats #bestAccuracy {
+#stats #accuracy,
+#stats #bestAccuracy {
   font-size: 1.2vw;
 }
 
@@ -332,6 +364,30 @@ main #inputs #reset {
     opacity: 1;
   }
   100% {
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes blink {
+  0%,
+  50%,
+  100% {
+    opacity: 1;
+  }
+  25%,
+  75% {
+    opacity: 0;
+  }
+}
+
+@keyframes blink {
+  0%,
+  50%,
+  100% {
+    opacity: 1;
+  }
+  25%,
+  75% {
     opacity: 0;
   }
 }
