@@ -8,7 +8,7 @@ body {
     width: 100%;
     height: 100vh;
     background-color: black;
-    background-image: linear-gradient(to right top, #090b3f, #201356, #39186d, #551a83, #741997, #990e96, #b90093, #d7008d, #ef1373, #fc3759, #ff5940, #fb7825);
+    background-image: radial-gradient(circle, #87084a, #6b054a, #4f0646, #32083f, #160334);
 
     display: flex;
     justify-content: center;
@@ -73,7 +73,7 @@ main {
             animation: blink normal 2s infinite ease-in-out;
         }
 
-        &>.words {
+        & > .words {
             position: relative;
 
             flex-direction: row;
@@ -83,7 +83,7 @@ main {
             padding-inline: 0.6vw;
             padding-top: 0.4vw;
 
-            &>.word {
+            & > .word {
                 position: relative;
                 margin-right: 0.45vw;
                 padding-inline: 0.2vw;
@@ -93,30 +93,30 @@ main {
 
                 margin-bottom: 0.3vw;
 
-                color: gray;
+                color: #a4a4a4;
 
                 transition: all 0.5s ease-in-out;
 
-                &>.correct {
+                & > .correct {
                     color: black;
                 }
 
-                &>.incorrect {
+                & > .incorrect {
                     color: red;
                     text-decoration: underline;
                 }
             }
 
-            &>.active {
+            & > .active {
                 // background-color: rgba(0, 0, 0, 0.15);
                 border-radius: 0.2vw;
             }
 
-            &>.correct {
+            & > .correct {
                 color: black;
             }
 
-            &>.incorrect {
+            & > .incorrect {
                 color: red;
             }
         }

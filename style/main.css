@@ -4,8 +4,7 @@ body {
   width: 100%;
   height: 100vh;
   background-color: black;
-  background-image: -webkit-gradient(linear, left bottom, right top, from(#090b3f), color-stop(#201356), color-stop(#39186d), color-stop(#551a83), color-stop(#741997), color-stop(#990e96), color-stop(#b90093), color-stop(#d7008d), color-stop(#ef1373), color-stop(#fc3759), color-stop(#ff5940), to(#fb7825));
-  background-image: linear-gradient(to right top, #090b3f, #201356, #39186d, #551a83, #741997, #990e96, #b90093, #d7008d, #ef1373, #fc3759, #ff5940, #fb7825);
+  background-image: radial-gradient(circle, #87084a, #6b054a, #4f0646, #32083f, #160334);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -102,7 +101,7 @@ main #text > .words > .word {
   font-size: 1.4vw;
   font-family: 'Roboto', sans-serif;
   margin-bottom: 0.3vw;
-  color: gray;
+  color: #a4a4a4;
   -webkit-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
 }

@@ -26,6 +26,13 @@ function CountDown(seconds, callback) {
             $("#textInput").val("");
             $("#textInput").prop("disabled", true);
 
+            //Hide caret fade out
+            $('#caret').fadeOut(1000);
+
+            // let correct = $('.words').filter(function () {
+            //     return $(this).data("correct") == true;
+            // });
+
             const Accuracy = correct / (correct + incorrect) * 100;
             const AccuracyString = Accuracy.toFixed(2) + "%";
 
@@ -48,7 +55,7 @@ function CountDown(seconds, callback) {
             }
 
             //Fade out and remove all .word
-            $(".word").fadeOut(1000, function () {
+            $(".word").fadeOut(3000, function () {
                 $(this).remove();
             });
         }
@@ -114,12 +121,12 @@ $.ajax({
         currentWord.addClass('active');
         currentWordChars = currentWord.text().split("");
 
-        $('#caret').css('top', currentWord.position().top + 'px');
-        $('#caret').css('left', currentWord.position().left + 'px');
-
         //Set .container to display block important
         $('#loader').css("display", "none");
         $('#contain').css('display', 'block');
+
+        $('#caret').css('top', currentWord.position().top + 'px');
+        $('#caret').css('left', currentWord.position().left + 2 + 'px');
     }
 });
 
@@ -167,14 +174,12 @@ $("#textInput").keyup(function(event) {
         const lastCharTopPos = lastChar.position().top;
         const lastCharLeftPos = lastChar.position().left;
 
-        $('#caret').css('top', currentWord.position().top + lastCharTopPos + 'px');
-        $('#caret').css('left', currentWord.position().left + lastCharLeftPos + 'px');
+        $('#caret').css('top', currentWord.position().top + lastCharTopPos + 'px').css('left', currentWord.position().left + lastCharLeftPos + 'px');
     }
     else if (valueCharsLength <= currentWordChars.length)
     {
         const lastChar2 = currentWord.find('.letter').eq(valueCharsLength - 1);
-        $('#caret').css('top', currentWord.position().top + lastChar2.position().top + 'px');
-        $('#caret').css('left', currentWord.position().left + lastChar2.position().left + lastChar2.width() + 'px');
+        $('#caret').css('top', currentWord.position().top + lastChar2.position().top + 'px').css('left', currentWord.position().left + lastChar2.position().left + lastChar2.width() + 'px');
     }
 
     for (let i = 0; i < currentWordChars.length; i++)
@@ -183,21 +188,18 @@ $("#textInput").keyup(function(event) {
 
         if (valueCharsLength <= i)
         {
-            letter.removeClass("correct");
-            letter.removeClass("incorrect");
+            letter.removeClass("correct").removeClass("incorrect");
             continue;
         }
 
         //Set correct on the letter if the letter is correct
         if (valueChars[i] == currentWordChars[i])
         {
-            letter.addClass("correct");
-            letter.removeClass("incorrect");
+            letter.addClass("correct").removeClass("incorrect");
         }
         else
         {
-            letter.addClass("incorrect");
-            letter.removeClass("correct");
+            letter.addClass("incorrect").removeClass("correct");
         }
     }
 
@@ -214,8 +216,7 @@ $("#textInput").keyup(function(event) {
         if (valueCharsLength <= currentWordChars.length)
         {
             const lastChar2 = currentWord.find('.letter').eq(valueCharsLength - 1);
-            $('#caret').css('top', currentWord.position().top + lastChar2.position().top + 'px');
-            $('#caret').css('left', currentWord.position().left + lastChar2.position().left + lastChar2.width() + document.documentElement.clientWidth * 0.65 / 100 + 'px');
+            $('#caret').css('top', currentWord.position().top + lastChar2.position().top + 'px').css('left', currentWord.position().left + lastChar2.position().left + lastChar2.width() + document.documentElement.clientWidth * 0.65 / 100 + 'px');
         }
 
         if (value == currentWordText)
@@ -253,19 +254,9 @@ $("#textInput").keyup(function(event) {
             wordsToRemove.forEach(word => word.remove());
 
             const lastChar2 = currentWord.find('.letter').eq(0);
-            $('#caret').css('top', currentWord.position().top + lastChar2.position().top + 'px');
-            $('#caret').css('left', currentWord.position().left + lastChar2.position().left + 'px');
+            $('#caret').css('top', currentWord.position().top + lastChar2.position().top + 'px').css('left', currentWord.position().left + lastChar2.position().left + 'px');
         }
 
         currentWord.addClass('active');
-    }
-});
-
-//Detect if the user presses the enter key
-$(document).keypress(function(event) {
-    if (event.which == 13) {
-        event.preventDefault();
-        //Reset the game
-        location.reload();
     }
 });
