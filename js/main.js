@@ -55,7 +55,7 @@ function CountDown(seconds, callback) {
             }
 
             //Fade out and remove all .word
-            $(".word").fadeOut(3000, function () {
+            $(".word").fadeOut(1000, function () {
                 $(this).remove();
             });
         }
