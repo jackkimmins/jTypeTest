@@ -43,7 +43,9 @@ function CountDown(seconds, callback) {
             }
             else
             {
-                const WPM = correct + incorrect + " WPM";
+
+
+                const WPM = correct + Math.round(incorrect / 2, 0) + " WPM";
 
                 //Set stats
                 $('#wpm').text(WPM);
