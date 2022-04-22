@@ -43,9 +43,7 @@ function CountDown(seconds, callback) {
             }
             else
             {
-
-
-                const WPM = correct + Math.round(incorrect / 2, 0) + " WPM";
+                const WPM = (correct + Math.round(incorrect / 2, 0)) * 2 + " WPM";
 
                 //Set stats
                 $('#wpm').text(WPM);
@@ -158,7 +156,7 @@ $('#wordList').change(function() {
 $("#textInput").keyup(function(event) {
     if (!isCountingDown)
     {
-        CountDown(60);
+        CountDown(30);
         isCountingDown = true;
         $('#caret').removeClass('blink');
         $("#textInput").prop("disabled", false);
